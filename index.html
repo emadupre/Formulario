@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario para Landing Pages</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Formulario para Landing Pages</h1>
+    <form id="landingForm">
+      <label for="businessName">Nombre del negocio/emprendimiento:</label>
+      <input type="text" id="businessName" name="businessName" required />
+
+      <label for="contactName">Nombre del contacto:</label>
+      <input type="text" id="contactName" name="contactName" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="description">Descripción breve del negocio:</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required
+      ></textarea>
+
+      <label for="goal"
+        >¿Cuál es el objetivo principal de la landing page?</label
+      >
+      <select id="goal" name="goal" required>
+        <option value="ventas">Generar ventas</option>
+        <option value="prospectos">Capturar prospectos</option>
+        <option value="portfolio">Mostrar portafolio</option>
+        <option value="informar">Informar sobre promociones</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="logo">Subir logo del negocio:</label>
+      <input type="file" id="logo" name="logo" accept="image/*" />
+
+      <button type="submit">Enviar</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
