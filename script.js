@@ -1,21 +1,21 @@
-document
-  .getElementById("landingForm")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-
-    const response = await fetch("https://formspree.io/f/xanqnwgw", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (response.ok) {
-      alert("Formulario enviado correctamente.");
-      this.reset();
-    } else {
-      alert("Error al enviar el formulario. Intenta nuevamente.");
-    }
-  });
+// Validación del formulario
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    
+                    setTimeout(function () {
+                        form.reset();
+                        form.classList.remove('was-validated');
+                    }, 1000); 
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
